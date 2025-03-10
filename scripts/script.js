@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const player1Img = document.getElementById("player1-img");
     const player2Img = document.getElementById("player2-img");
 
-    // Cargar sonidos
+    // Cargar sonidos; funcionalidad a futuro
     const selectSound = new Audio("./../sounds/select.mp3");
     const fightSound = new Audio("./../sounds/fight.mp3");
 

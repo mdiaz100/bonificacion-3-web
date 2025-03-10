@@ -113,7 +113,7 @@ li:hover {
     display: none;
 }
 
-/* 🔥 NUEVO: Estilos para la pantalla de pelea */
+/*  Estilos para la pantalla de pelea */
 #battle-screen {
     display: none; /* Oculto por defecto */
     top: 0;
@@ -126,13 +126,13 @@ li:hover {
     align-items: center;
 }
 
-/* 🔥 NUEVO: Animación de entrada para los personajes */
+/*  Animación de entrada para los personajes */
 @keyframes enterBattle {
     0% { transform: translateY(-100px) scale(0.5); opacity: 0; }
     100% { transform: translateY(0) scale(1); opacity: 1; }
 }
 
-/* 🔥 NUEVO: Personajes en batalla */
+/*  Personajes en batalla */
 .player {
     width: 30%;
 }
@@ -142,7 +142,7 @@ li:hover {
     animation: enterBattle 1s ease-in-out;
 }
 
-/* 🔥 NUEVO: Texto "FIGHT!" en la pantalla de batalla */
+/* Texto "FIGHT!" en la pantalla de batalla */
 .fight-text {
     font-size: 80px;
     color: red;
