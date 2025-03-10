@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    background: linear-gradient(135deg, #1a1a1a, #000);
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Fondo con iluminación tipo ring de pelea */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255,0,0,0.3) 20%, transparent 50%),
+                radial-gradient(circle, rgba(0,0,255,0.3) 20%, transparent 50%);
+    background-size: 200% 200%;
+    background-position: top left, top right;
+    z-index: -1;
+}
+
+/* Título */
+header {
+    padding: 20px;
+    font-size: 24px;
+    text-shadow: 4px 4px 8px rgba(255, 0, 0, 0.8);
+}
+
+/* Diseño del área de jugadores */
+main {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+section {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+    width: 300px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+}
+
+/* Cambia el color de la sombra para cada jugador */
+#choose-player2 {
+    box-shadow: 0 0 15px rgba(0, 0, 255, 0.8);
+}
+
+/* Efecto al pasar el mouse sobre un jugador */
+section:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px rgba(255, 255, 0, 1);
+}
+
+/* Lista de personajes */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    background: rgba(0, 0, 0, 0.5);
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+}
+
+/* Efecto al pasar el mouse sobre un personaje */
+li:hover {
+    background: rgba(255, 255, 0, 0.7);
+    transform: scale(1.1);
+    color: black;
+    font-weight: bold;
+}
+
+/* Resaltar selección */
+.selected {
+    background: rgba(255, 255, 0, 1);
+    color: black;
+    font-weight: bold;
+    transform: scale(1.2);
+}
+
+/* Efecto de inicio de pelea */
+.fight-banner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    font-weight: bold;
+    color: red;
+    text-shadow: 5px 5px 10px black;
+    animation: fightAnimation 1.5s ease-in-out;
+}
+
+@keyframes fightAnimation {
+    0% { transform: translate(-50%, -50%) scale(0.5); opacity: 0; }
+    50% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(1); opacity: 0; }
+}
+
+.hidden {
+    display: none;
+}
+
+/* 🔥 NUEVO: Estilos para la pantalla de pelea */
+#battle-screen {
+    display: none; /* Oculto por defecto */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('./../images/battle-bg.jpg') no-repeat center center/cover;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* 🔥 NUEVO: Animación de entrada para los personajes */
+@keyframes enterBattle {
+    0% { transform: translateY(-100px) scale(0.5); opacity: 0; }
+    100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+/* 🔥 NUEVO: Personajes en batalla */
+.player {
+    width: 30%;
+}
+
+.player img {
+    width: 100%;
+    animation: enterBattle 1s ease-in-out;
+}
+
+/* 🔥 NUEVO: Texto "FIGHT!" en la pantalla de batalla */
+.fight-text {
+    font-size: 80px;
+    color: red;
+    font-weight: bold;
+    text-shadow: 5px 5px 10px black;
+    animation: fightAnimation 1.5s ease-in-out;
+}
+
+
+
+
